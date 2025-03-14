@@ -22,6 +22,15 @@ Sessions occur three times per week: Monday, Wednesday, and Friday (each lasting
 
 **Collected Data:**
 
+| Factor               | Measurement Method                                               | Notes                                             |
+|----------------------|-----------------------------------------------------------------|---------------------------------------------------|
+| **Throwing**         | Number of successful throws / total throws                      | Will be recorded during training                 |
+| **Catching Percentage** | Number of successful catches / total catch attempts          | Will be recorded during training                 |
+| **Hours of Sleep**   | Tracked using Samsung Health or Sleep Cycle                     | Recorded every morning                            |
+| **Caffeine Intake**  | Logged manually (mg of caffeine consumed)                       | Will note time of intake                         |
+| **Resting Heart Rate** | Recorded via smartwatch (Samsung Health / Apple Health)       | Taken before each training session               |
+| **Psychological State** | Logged using a mood tracking app (Daylio, Moodfit, Baseline) | Ratings on stress, fatigue, overall mood         |
+
 **Tools & APIs Used:**
 - Google Sheets or Notion for manual data logging
 - Samsung Health / Apple Health for resting heart rate & sleep tracking
