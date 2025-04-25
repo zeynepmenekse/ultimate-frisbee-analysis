@@ -1,0 +1,100 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import pearsonr
+import statsmodels.api as sm
+
+file_path = "/content/dsa_project_dataset_latestvers.xlsx"
+data = pd.read_excel(file_path)
+
+data['Date'] = pd.to_datetime(data['Date'])
+
+numeric_cols = ['Sleep Hours', 'Sleep Quality', 'Caffeine (mg)', 'Mood (1-10)',
+                'Training Difficulty', 'Protein (g)', 'Carbohydrates (g)',
+                'Body Weight (kg)', 'CatchThrow_Percentage']
+for col in numeric_cols:
+    data[col] = pd.to_numeric(data[col], errors='coerce')
+
+print("Missing values:")
+print(data.isnull().sum())
+data.fillna(data.mean(), inplace=True)
+
+plt.figure(figsize=(10, 8))
+correlation_matrix = data.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+plt.title('Correlation Matrix')
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='Sleep Hours', y='CatchThrow_Percentage', data=data)
+plt.title('Sleep Hours vs Catch/Throw Percentage')
+plt.xlabel('Sleep Hours')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.boxplot(x='Sleep Quality', y='CatchThrow_Percentage', data=data)
+plt.title('Sleep Quality vs Catch/Throw Percentage')
+plt.xlabel('Sleep Quality (1-10)')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.boxplot(x='Mood (1-10)', y='CatchThrow_Percentage', data=data)
+plt.title('Mood vs Catch/Throw Percentage')
+plt.xlabel('Mood (1-10)')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='Caffeine (mg)', y='CatchThrow_Percentage', data=data)
+plt.title('Caffeine Intake vs Catch/Throw Percentage')
+plt.xlabel('Caffeine Intake (mg)')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='Protein (g)', y='CatchThrow_Percentage', data=data)
+plt.title('Protein Intake vs Catch/Throw Percentage')
+plt.xlabel('Protein Intake (g)')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
+
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x='Carbohydrates (g)', y='CatchThrow_Percentage', data=data)
+plt.title('Carbohydrates vs Catch/Throw Percentage')
+plt.xlabel('Carbohydrates (g)')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+plt.plot(data['Date'], data['CatchThrow_Percentage'], marker='o', label='Catch/Throw %')
+plt.plot(data['Date'], data['Body Weight (kg)'], marker='s', label='Body Weight (kg)')
+plt.title('Catch/Throw % and Body Weight Over Time')
+plt.xlabel('Date')
+plt.ylabel('Percentage / Weight')
+plt.legend()
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+X = data['Sleep Hours']
+y = data['CatchThrow_Percentage']
+X = sm.add_constant(X)
+model = sm.OLS(y, X).fit()
+print(model.summary())
+
+correlation, p_value = pearsonr(data['Sleep Hours'], data['CatchThrow_Percentage'])
+print("Correlation (Sleep Hours vs CatchThrow %):", correlation)
+print("P-Value:", p_value)
+if p_value < 0.05:
+    print("Significant relationship.")
+else:
+    print("No significant relationship.")
+
+plt.figure(figsize=(8, 6))
+sns.boxplot(x='Training Difficulty', y='CatchThrow_Percentage', data=data)
+plt.title('Training Difficulty vs Catch/Throw Percentage')
+plt.xlabel('Training Difficulty (1-10)')
+plt.ylabel('Catch/Throw Percentage')
+plt.show()
