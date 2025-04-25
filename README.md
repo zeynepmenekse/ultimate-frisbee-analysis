@@ -1,62 +1,64 @@
-# ultimate-frisbee-analysis
 # Ultimate Frisbee Training Performance Analysis
 
 ## Project Overview
-This project aims to analyze the impact of various factors on my throwing accuracy and catching percentage during ultimate frisbee training sessions. The primary goal is to identify how different physical, physiological, and psychological factors influence my performance and use the insights to improve my game.
+This project aims to analyze the impact of various physiological, nutritional, and psychological factors on my catching and throwing performance during ultimate frisbee training sessions. By using a structured dataset and Python-based data analysis, the project investigates which variables most significantly influence training success, with the goal of improving future performance through actionable insights.
 
 ## Research Question
-How do sleep quality, caffeine intake, resting heart rate, and psychological state affect my throwing accuracy and catching percentage in ultimate frisbee training sessions?
+How do multiple physical, nutritional, and psychological attributes collectively affect my catching and throwing performance during ultimate frisbee training sessions?
 
 ## Hypothesis
-**H₀ (Null Hypothesis):** There is no significant relationship between the measured factors (sleep, caffeine, heart rate, and psychological state) and my training performance.  
-**H₁ (Alternative Hypothesis):** There is a significant relationship between the measured factors and my performance. Specifically:
-- Better sleep correlates with higher accuracy and catch percentage.
-- Higher caffeine intake may improve alertness but could also lead to jitteriness, negatively affecting accuracy.
-- Increased resting heart rate (indicator of stress or fatigue) may correlate with lower performance.
-- Higher stress levels due to academic or relational factors may decrease performance.
+**H₀ (Null Hypothesis):** There is no significant relationship between the attributes in the dataset and my training performance.
 
-## Data Collection Plan
+**H₁ (Alternative Hypothesis):** There is a significant relationship between one or more attributes and my performance. This includes factors such as sleep quality, caffeine intake, mood, protein, carbohydrates, and training difficulty.
 
-**Training Schedule:**  
-Sessions occur three times per week: Monday, Wednesday, and Friday (each lasting 3 hours). The same training environment and drills will be maintained to ensure consistency.
+## Dataset Description
+The dataset includes manually recorded data from multiple ultimate frisbee training sessions. It contains 10 attributes:
 
-**Collected Data:**
+| Attribute             | Description                                      |
+|-----------------------|--------------------------------------------------|
+| Date                  | Date of training session                         |
+| Sleep Hours           | Number of hours slept before training            |
+| Sleep Quality         | Self-rated sleep quality (scale: 1-10)           |
+| Caffeine (mg)         | Caffeine intake on training day                  |
+| Mood (1-10)           | Overall mood/stress rating before training       |
+| Training Difficulty   | Self-rated difficulty of training (scale: 1-10)  |
+| Protein (g)           | Protein intake (g) on training day               |
+| Carbohydrates (g)     | Carbohydrate intake (g) on training day          |
+| Body Weight (kg)      | Weight on the day of training                    |
+| CatchThrow_Percentage | Main performance metric (%)                     |
 
-| Factor               | Measurement Method                                               | Notes                                             |
-|----------------------|-----------------------------------------------------------------|---------------------------------------------------|
-| **Throwing**         | Number of successful throws / total throws                      | Will be recorded during training                 |
-| **Catching Percentage** | Number of successful catches / total catch attempts          | Will be recorded during training                 |
-| **Hours of Sleep**   | Tracked using Samsung Health or Sleep Cycle                     | Recorded every morning                            |
-| **Caffeine Intake**  | Logged manually (mg of caffeine consumed)                       | Will note time of intake                         |
-| **Resting Heart Rate** | Recorded via smartwatch (Samsung Health / Apple Health)       | Taken before each training session               |
-| **Psychological State** | Logged using a mood tracking app (Daylio, Moodfit, Baseline) | Ratings on stress, fatigue, overall mood         |
+## Data Processing & Analysis Plan
 
-**Tools & APIs Used:**
-- Google Sheets or Notion for manual data logging
-- Samsung Health / Apple Health for resting heart rate & sleep tracking
-- Mood Tracking Apps: Daylio, Moodfit, Baseline for psychological state tracking
-- Excel / Python (Pandas, Matplotlib, Seaborn, Scikit-Learn) for data analysis & visualization
+### Data Cleaning
+- Convert date formats
+- Normalize numeric columns (mg, grams, percentages)
+- Fill missing values with mean or interpolated data
 
-## Data Processing & Analysis
+### Exploratory Data Analysis (EDA)
+- **Correlation Heatmap:** Visualize overall attribute relationships
+- **Boxplots:** Examine impact of sleep quality and mood on performance
+- **Scatter Plots:** Visualize trends between caffeine/protein/carbs and performance
+- **Trend Line Visualization:** Plot performance over time vs. weight
 
-**Data Cleaning:**
-- Convert timestamps to appropriate formats.
-- Handle missing values.
-- Normalize caffeine intake units.
+### Statistical Analysis
+- **Pearson Correlation Tests**: Evaluate significance of individual variables
+- **Regression Analysis**: 
+  - Simple Linear Regression (e.g., each variable → Catch %)
+  - Polynomial Regression where needed (e.g., non-linear variables)
+- **Hypothesis Testing**:
+  - Check p-values for regression coefficients
+  - Accept/reject null hypothesis based on significance level (α = 0.05)
 
-**Feature Engineering:**
-- Compute catching percentage and throwing accuracy.
-- Create "stress level difference" between pre- and post-training stress.
-- Categorize sleep duration into Short (≤4h), Normal (5-7h), Optimal (8h+).
+## Key Analytical Objectives
+- Identify which individual or combined variables significantly impact performance
+- Evaluate non-correlating variables for control comparison
+- Explore both linear and non-linear patterns among attributes
 
-**Exploratory Data Analysis (EDA):**
-- Histograms: Distribution of throwing accuracy, catching percentage.
-- Boxplots: Relationship between sleep, caffeine intake, and performance.
-- Scatter plots: Correlations between resting heart rate, mood, and performance.
+## Tools & Technologies Used
+- **Python** (Pandas, Matplotlib, Seaborn, Statsmodels)
+- **Excel** for preliminary data entry and structure
 
-**Statistical Analysis & Machine Learning:**
-- **Correlation Analysis:** Checking relationships between variables.
-- **Regression Models:**
-  - Linear Regression: Predicting throwing accuracy based on sleep, caffeine, and stress.
-  - Decision Tree & Random Forest: Identifying the most influential factors.
-- **Clustering:** Grouping performance patterns under different conditions.
+## Conclusion (to be written after full analysis)
+To be completed with insights from the final regression and visualization results.
+
+
