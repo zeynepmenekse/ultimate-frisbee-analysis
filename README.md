@@ -92,6 +92,33 @@ Statistical significance will be assessed using Pearson correlation and p-values
 - Plot: Caffeine (mg) vs CatchThrow_Percentage (expect curved/U-shaped relation)
 - Plot: Body Weight vs CatchThrow_Percentage (expect minimal effect)
 
+## Key Visualizations
+
+### Sleep Hours vs Catch/Throw %
+![Sleep Hours](SleepHours.png)
+
+### Sleep Quality vs Catch/Throw %
+![Sleep Quality](SleepQuality.png)
+
+### Mood vs Catch/Throw %
+![Mood](Mood.png)
+
+### Caffeine Intake vs Catch/Throw %
+![Caffeine Intake](CaffeineIntake.png)
+
+### Protein Intake vs Catch/Throw %
+![Protein Intake](ProteinIntake.png)
+
+### Carbohydrates vs Catch/Throw %
+![Carbohydrates](CarbohydratesIntake.png)
+
+### Training Difficulty vs Catch/Throw %
+![Training Difficulty](TrainingDifficulty.png)
+
+### Body Weight and Catch/Throw % Over Time
+![Weight Trend](Weight.png)
+
+
 ## Conclusion (To Be Finalized Post-Analysis)
 
 By the end of this project, I aim to answer:
