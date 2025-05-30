@@ -54,7 +54,7 @@ Data was manually recorded after each of 20 training sessions. Attributes includ
 
 ## 3. Exploratory Data Analysis (EDA)
 
-### 🔍 Correlation Insights
+### Correlation Insights
 
 | Variable              | Correlation with Catch/Throw % |
 |-----------------------|-------------------------------|
@@ -64,7 +64,7 @@ Data was manually recorded after each of 20 training sessions. Attributes includ
 | Caffeine (mg)         | ~ 0.18 (weak)                 |
 | Body Weight, Nutrition| Negligible/insignificant      |
 
-### 📊 Visual Observations
+### Visual Observations
 
 - **Mood**: Clear upward trend (higher mood → higher performance)
 - **Sleep**: Longer/higher quality sleep linked to better results
