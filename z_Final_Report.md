@@ -1,9 +1,5 @@
 # Ultimate Frisbee Training Performance Analysis
 
-**Author**: [Your Name]  
-**Course**: [Course Name]  
-**Instructor**: [Professor's Name]  
-**Date**: [Submission Date]
 
 ---
 
