@@ -1,4 +1,4 @@
-# 🥏 Ultimate Frisbee Training Performance Analysis
+# Ultimate Frisbee Training Performance Analysis
 
 **Author**: [Your Name]  
 **Course**: [Course Name]  
@@ -7,7 +7,7 @@
 
 ---
 
-## 📄 Abstract
+## Abstract
 
 This study explores the relationship between daily lifestyle factors and athletic performance in ultimate frisbee training sessions. Over several weeks, data was collected on sleep habits, nutritional intake, psychological states, and training difficulty to assess their impact on the catch/throw performance metric. Using Python-based statistical analysis and visualization, this project identifies key variables influencing performance and proposes a framework for evidence-based athletic optimization.
 
@@ -79,7 +79,7 @@ Data was manually recorded after each of 20 training sessions. Attributes includ
 
 - **R²**: 0.404  
 - **p-value**: 0.0046  
-- ✅ Indicates a statistically significant relationship between sleep and performance.
+- Indicates a statistically significant relationship between sleep and performance.
 
 ### 4.2 Hypothesis Testing
 
@@ -94,7 +94,7 @@ Pearson correlation and regression testing reject H₀ for **mood** and **sleep*
 
 This analysis finds **mood** and **sleep-related factors** to be the strongest predictors of ultimate frisbee performance. Caffeine and dietary metrics did not show consistent or significant effects.
 
-### ⚠️ Limitations
+### Limitations
 
 - Small dataset (n = 20 sessions)
 - Subjective variables (e.g., mood, sleep quality)
@@ -106,14 +106,10 @@ This analysis finds **mood** and **sleep-related factors** to be the strongest p
 
 This project confirms that **psychological state and rest** are key contributors to athletic performance. It offers actionable insight into how optimizing recovery and mental well-being can yield better training outcomes.
 
-### 🔮 Future Directions
+### Future Directions
 
 - Collect larger, long-term datasets  
 - Add biometric data (e.g., heart rate, readiness)  
 - Experiment with polynomial and ML-based modeling  
 - Include session metadata (weather, time of day, location)
-
----
-
-## 📂 Repository Contents
 
